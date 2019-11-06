@@ -1,29 +1,18 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+
+import Card from './card'
 
 function Results(props) {
-  const [results, setResults] = useState();
 
-  useEffect(() => {
-    async function fetchPokemon() {
-      const results = await axios.get(
-        `https://api.pokemontcg.io/v1/cards?name=${props.query}`
-      );
-      let data = results.data;
-      setResults(data);
-    }
-    fetchPokemon();
-  }, [props.query]);
+  let list = <p>Waiting for your input!</p>;
 
-  let list = null;
-  if (results) {
-    list = results.cards.map(el => {
-      // component here
-      return <li>{el.name}</li>;
+  if (props.results) {
+    list = props.results.map(el => {
+
+      return <Card imageUrl={el.imageUrl} key={el.id}>{el.name}</Card>;
     });
   }
-
-  return <ul>{list}</ul>;
+  return <>{list}</>;
 }
 
 export default Results;
