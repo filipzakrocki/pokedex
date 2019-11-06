@@ -7,8 +7,8 @@ import * as serviceWorker from "./serviceWorker";
 //reducers
 import searchReducer from "./store/reducers/search";
 
-import { Provider } from "redux";
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
+import { Provider } from "react-redux";
 import ReduxThunk from "redux-thunk";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -28,7 +28,9 @@ const app = (
   </Provider>
 );
 
-ReactDOM.render(app, document.getElementById("root"));
+console.log(app);
+
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
