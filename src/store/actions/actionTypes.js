@@ -1,1 +1,2 @@
 export const SET_SEARCH_QUERY = "SET_SEARCH_QUERY";
+export const SET_RESULTS = "SET_RESULTS";

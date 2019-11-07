@@ -1,20 +1,11 @@
 import * as actionTypes from "../actions/actionTypes";
-
-
-const initialState = {
-  search: {
-    query: null
-  }
-};
+import { updateObject } from "../../shared/utility";
 
 const setSearchQuery = (state, action) => {
-  return {
-    ...state,
-    search: {
-      ...state.search,
-      query: action.query
-    }
-  };
+  return updateObject(state, { query: action.query });
+};
+const setResults = (state, action) => {
+  return updateObject(state, { results: action.results });
 };
 
 // const authStart = (state, action) => {
@@ -40,10 +31,12 @@ const setSearchQuery = (state, action) => {
 //   return updateObject(state, { authRedirectPath: action.path });
 // };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.SET_SEARCH_QUERY:
       return setSearchQuery(state, action);
+    case actionTypes.SET_RESULTS:
+      return setResults(state, action);
     // case actionTypes.AUTH_START:
     //   return authStart(state, action);
     // case actionTypes.AUTH_SUCCESS:
