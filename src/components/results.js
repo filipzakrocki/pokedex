@@ -21,6 +21,8 @@ const results = props => {
     });
   }
 
+  // add modal somewhere there
+
   return list;
 };
 
