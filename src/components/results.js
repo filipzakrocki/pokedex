@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Spinner from "./UI/Spinner/Spinner";
-import Card from "./card";
+import Card from "./Card";
 
 const results = props => {
   let list = <p>Waiting for your input!</p>;
