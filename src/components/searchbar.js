@@ -5,7 +5,9 @@ import * as actions from "../store/actions/index";
 const Searchbar = props => {
   return (
     <div>
-      <label>What pokemon card are you looking for?</label>
+      <div>
+        <label>What pokemon card are you looking for?</label>
+      </div>
       <input
         type="text"
         placeholder="pokemon name"

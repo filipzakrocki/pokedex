@@ -16,14 +16,25 @@ export const setResults = data => {
   };
 };
 
+export const fetchStarted = data => {
+  return {
+    type: actionTypes.FETCH_STARTED
+  };
+};
+export const fetchFinished = data => {
+  return {
+    type: actionTypes.FETCH_FINISHED
+  };
+};
+
 export const fetchPokemon = pokemonQuery => {
   return async dispatch => {
-    //dispatch for loading?
+    dispatch(fetchStarted());
     const results = await axios.get(
       `https://api.pokemontcg.io/v1/cards?name=${pokemonQuery}`
     );
     const cardsArray = await results.data.cards;
-
+    dispatch(fetchFinished());
     dispatch(setResults(cardsArray));
   };
 };

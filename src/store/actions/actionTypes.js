@@ -1,2 +1,5 @@
 export const SET_SEARCH_QUERY = "SET_SEARCH_QUERY";
 export const SET_RESULTS = "SET_RESULTS";
+
+export const FETCH_STARTED = "FETCH_STARTED";
+export const FETCH_FINISHED = "FETCH_FINISHED";
