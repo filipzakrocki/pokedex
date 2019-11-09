@@ -5,7 +5,8 @@ const initialState = {
   query: null,
   results: null,
   loading: false,
-  cardOpen: false
+  modalOpen: false,
+  zoomedCard: null
 };
 
 const setSearchQuery = (state, action) => {
@@ -20,6 +21,15 @@ const fetchStarted = (state, action) => {
 const fetchFinished = (state, action) => {
   return updateObject(state, { loading: false });
 };
+const closeModal = (state, action) => {
+  return updateObject(state, { modalOpen: false });
+};
+const openModal = (state, action) => {
+  return updateObject(state, {
+    modalOpen: true,
+    zoomedCard: action.selectedCard
+  });
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -31,6 +41,10 @@ const reducer = (state = initialState, action) => {
       return fetchStarted(state, action);
     case actionTypes.FETCH_FINISHED:
       return fetchFinished(state, action);
+    case actionTypes.CLOSE_MODAL:
+      return closeModal(state, action);
+    case actionTypes.OPEN_MODAL:
+      return openModal(state, action);
     // case actionTypes.AUTH_START:
     //   return authStart(state, action);
     // case actionTypes.AUTH_SUCCESS:

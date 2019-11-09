@@ -21,6 +21,7 @@ export const fetchStarted = data => {
     type: actionTypes.FETCH_STARTED
   };
 };
+
 export const fetchFinished = data => {
   return {
     type: actionTypes.FETCH_FINISHED
@@ -36,6 +37,19 @@ export const fetchPokemon = pokemonQuery => {
     const cardsArray = await results.data.cards;
     dispatch(fetchFinished());
     dispatch(setResults(cardsArray));
+  };
+};
+
+export const closeModal = () => {
+  return {
+    type: actionTypes.CLOSE_MODAL
+  };
+};
+export const openModal = clickedCardId => {
+  console.log(clickedCardId);
+  return {
+    type: actionTypes.OPEN_MODAL,
+    selectedCard: clickedCardId
   };
 };
 

@@ -1,1 +1,1 @@
-export { setSearchQuery, fetchPokemon } from "./search";
+export { setSearchQuery, fetchPokemon, closeModal, openModal } from "./search";

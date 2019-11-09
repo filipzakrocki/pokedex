@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import Spinner from "./UI/Spinner/Spinner";
-import Card from "./Card";
+import Spinner from "../UI/Spinner/Spinner";
+import Card from "./Card/Card";
 
 const results = props => {
   let list = <p>Waiting for your input!</p>;
@@ -13,6 +13,7 @@ const results = props => {
       return (
         <Card
           key={card.id}
+          id={card.id}
           name={card.name}
           imageUrl={card.imageUrl}
           imageUrlHiRes={card.imageUrlHiRes}
