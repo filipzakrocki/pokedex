@@ -9,11 +9,12 @@ const results = props => {
   if (props.loading) {
     list = <Spinner />;
   } else if (props.results) {
-    list = props.results.map(card => {
+    list = props.results.map((card, index) => {
       return (
         <Card
           key={card.id}
           id={card.id}
+          index={index}
           name={card.name}
           imageUrl={card.imageUrl}
           imageUrlHiRes={card.imageUrlHiRes}
@@ -34,7 +35,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(results);
+export default connect(mapStateToProps, null)(results);

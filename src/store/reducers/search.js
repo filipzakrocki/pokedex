@@ -6,7 +6,7 @@ const initialState = {
   results: null,
   loading: false,
   modalOpen: false,
-  zoomedCard: null
+  zoomedCardIndex: null
 };
 
 const setSearchQuery = (state, action) => {
@@ -27,7 +27,7 @@ const closeModal = (state, action) => {
 const openModal = (state, action) => {
   return updateObject(state, {
     modalOpen: true,
-    zoomedCard: action.selectedCard
+    zoomedCardIndex: action.selectedCard
   });
 };
 

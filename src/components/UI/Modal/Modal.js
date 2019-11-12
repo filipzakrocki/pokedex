@@ -8,6 +8,7 @@ import ZoomedCard from "../../ZoomedCard/ZoomedCard";
 
 const Modal = props => {
   // if show then display backdrop + zoomed card
+  // split modal to backdrop and zoomed card?
 
   let modal = props.modalOpen ? (
     <div className="Modal" onClick={() => props.closeModal()}>
@@ -29,7 +30,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

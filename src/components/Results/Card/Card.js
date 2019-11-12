@@ -9,18 +9,15 @@ const Card = props => {
       src={props.imageUrl}
       title={props.name}
       id={props.id}
-      onClick={event => props.openModal(event.target.id)}
+      onClick={() => props.openModal(props.index)}
     />
   );
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    openModal: id => dispatch(actions.openModal(id))
+    openModal: index => dispatch(actions.openModal(index))
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Card);
+export default connect(null, mapDispatchToProps)(Card);

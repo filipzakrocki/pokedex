@@ -1,0 +1,20 @@
+.zoomedWrapper {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+}
+
+.zoomedWrapper.leftPanel,
+.zoomedWrapper.rightPanel {
+  display: block;
+}
+
+.leftPanel img {
+  max-height: 80vh;
+}
+
+.rightPanel.title {
+  margin: auto;
+}

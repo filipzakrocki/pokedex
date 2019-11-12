@@ -45,11 +45,12 @@ export const closeModal = () => {
     type: actionTypes.CLOSE_MODAL
   };
 };
-export const openModal = clickedCardId => {
-  console.log(clickedCardId);
+
+export const openModal = clickedCardIndex => {
+  console.log(clickedCardIndex);
   return {
     type: actionTypes.OPEN_MODAL,
-    selectedCard: clickedCardId
+    selectedCard: clickedCardIndex
   };
 };
 
