@@ -1,33 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import Spinner from "../UI/Spinner/Spinner";
 import { connect } from "react-redux";
 
 import "./ZoomedCard.css";
 
 const ZoomedCard = props => {
+  //assigning props to card
   const card = props.results[props.selectedCard];
 
-  const cardReady = card.imageUrlHiRes ? (
-    <div className={"zoomedWrapper"} onClick={null}>
-      <div className="leftPanel">
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const image = imageLoaded ? (
+    <div className={"zoomedWrapper"}>
+      <div className="leftPanel" onClick={e => e.stopPropagation()}>
         <img title={card.name} alt={card.name} src={card.imageUrlHiRes}></img>
-        <p>{card.artist}</p>
+        <p>Artist: {card.artist}</p>
       </div>
-      <div className="rightPanel">
+      <div className="rightPanel" onClick={e => e.stopPropagation()}>
         <h3 className="title">Card information for {card.name}</h3>
-        <p>{card.hp}</p>
-        <p>{card.type}</p>
-        <p>{card.hp}</p>
-        <p>{card.hp}</p>
-        <p>{card.hp}</p>
-        <p>{card.retreatCost}</p>
+        <p>Hit Points: {card.hp}</p>
+        <p>Pokemon type(s): {card.types ? card.types.join(" ") : null}</p>
+        <p>
+          Reatreat Cost: {card.retreatCost ? card.retreatCost.join(" ") : "0"}
+        </p>
         <p>Set: {card.set}</p>
         <p>Card's Rarity: {card.rarity}</p>
         <p>Unique ID: {card.id}</p>
       </div>
     </div>
   ) : (
-    <Spinner />
+    <div>
+      <Spinner />
+    </div>
+  );
+
+  const cardReady = (
+    <>
+      {image}
+      {/* hidden div to render the wrapper only after it hi res image is loaded */}
+      <div style={{ display: "none" }}>
+        <img
+          src={card.imageUrlHiRes}
+          alt={"placeholder"}
+          onLoad={() => setImageLoaded(true)}
+        />
+      </div>
+    </>
   );
 
   return cardReady;

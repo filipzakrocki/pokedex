@@ -4,17 +4,20 @@
   flex-direction: row;
   justify-content: center;
   color: white;
+  padding: 2%;
 }
 
-.zoomedWrapper.leftPanel,
-.zoomedWrapper.rightPanel {
+.zoomedWrapper .leftPanel,
+.zoomedWrapper .rightPanel {
   display: block;
+  padding: 1vh;
 }
 
 .leftPanel img {
-  max-height: 80vh;
+  max-height: 85vh;
 }
 
-.rightPanel.title {
-  margin: auto;
+.rightPanel {
+  align-items: center;
+  margin: auto 0;
 }

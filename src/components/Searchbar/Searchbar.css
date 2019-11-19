@@ -1,0 +1,45 @@
+.Searchbar {
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  text-align: center;
+  align-content: center;
+  align-items: baseline;
+  background: #a07855ff;
+  color: white;
+  padding: 20px;
+}
+
+.Searchbar-label__wrapper {
+  flex: 5;
+}
+
+.Searchbar-input__wrapper {
+  flex: 4;
+}
+
+.Searchbar-button__wrapper {
+  flex: 1;
+}
+
+.Searchbar-input {
+  width: 80%;
+  font-size: 30px;
+  line-height: 1.5em;
+}
+
+.Searchbar-label {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.Searchbar-button {
+  padding: 20px;
+  background: #d4b996ff;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  outline: none;
+}

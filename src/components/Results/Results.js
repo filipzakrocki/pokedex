@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import Spinner from "../UI/Spinner/Spinner";
 import Card from "./Card/Card";
 
+import "./Results.css";
+
 const results = props => {
   let list = <p>Waiting for your input!</p>;
 
@@ -23,9 +25,7 @@ const results = props => {
     });
   }
 
-  // add modal somewhere there
-
-  return list;
+  return <div className={"Results"}>{list}</div>;
 };
 
 const mapStateToProps = state => {

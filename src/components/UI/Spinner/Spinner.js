@@ -1,6 +1,10 @@
 import React from "react";
-import "./Spinner2.css";
+import "./Spinner.css";
 
-const spinner = () => <div className="Loader">Loading...</div>;
+import pokeball from "../../../assets/pokeball.png";
+
+const spinner = () => {
+  return <img alt={"spinner"} className="rotate" src={pokeball} />;
+};
 
 export default spinner;

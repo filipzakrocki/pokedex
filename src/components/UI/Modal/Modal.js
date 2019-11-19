@@ -11,9 +11,12 @@ const Modal = props => {
   // split modal to backdrop and zoomed card?
 
   let modal = props.modalOpen ? (
-    <div className="Modal" onClick={() => props.closeModal()}>
-      <ZoomedCard />
-    </div>
+    <>
+      <div className="Modal" onClick={() => props.closeModal()}>
+        {" "}
+        <ZoomedCard />
+      </div>
+    </>
   ) : null;
 
   return modal;
