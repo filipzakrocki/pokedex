@@ -1,4 +1,9 @@
 .Results {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
   height: 100%;
-  background: #a07855ff;
+  padding: 50px 50px;
 }

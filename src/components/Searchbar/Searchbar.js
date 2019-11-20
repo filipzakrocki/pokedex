@@ -3,10 +3,15 @@ import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 
 import "./Searchbar.css";
+import Logo from "../../assets/logo.png";
+import Pokeball from "../../assets/pokeball.png";
 
 const Searchbar = props => {
   return (
-    <div className={"Searchbar"}>
+    <div className="Searchbar">
+      <div className={"Searchbar-logo__wrapper"}>
+        <img className={"Searchbar-logo"} src={Logo} alt="logo" />
+      </div>
       <div className={"Searchbar-label__wrapper"}>
         <label className={"Searchbar-label"}>
           What pokemon card are you looking for?
@@ -22,14 +27,15 @@ const Searchbar = props => {
             event.key === "Enter" ? props.fetchPokemon(props.query) : null
           }
         />
-      </div>
-      <div className={"Searchbar-button__wrapper"}>
         <button
           className={"Searchbar-button"}
           onClick={() => props.fetchPokemon(props.query)}
         >
-          Submit
+          <img src={Pokeball} alt="Search" className={"Searchbar-buttonImg"} />
         </button>
+      </div>
+      <div className={"circle"}>
+        <div className="circle2"></div>
       </div>
     </div>
   );

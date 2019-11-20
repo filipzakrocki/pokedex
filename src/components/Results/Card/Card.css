@@ -1,0 +1,10 @@
+.Card {
+  max-height: 240px;
+
+  padding: 10px;
+}
+
+.Card:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
