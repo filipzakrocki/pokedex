@@ -12,6 +12,9 @@ const Searchbar = props => {
       <div className={"Searchbar-logo__wrapper"}>
         <img className={"Searchbar-logo"} src={Logo} alt="logo" />
       </div>
+      <div className="poke-circle">
+        <div className="poke-circle2"></div>
+      </div>
       <div className={"Searchbar-label__wrapper"}>
         <label className={"Searchbar-label"}>
           What pokemon card are you looking for?
@@ -33,9 +36,6 @@ const Searchbar = props => {
         >
           <img src={Pokeball} alt="Search" className={"Searchbar-buttonImg"} />
         </button>
-      </div>
-      <div className={"circle"}>
-        <div className="circle2"></div>
       </div>
     </div>
   );

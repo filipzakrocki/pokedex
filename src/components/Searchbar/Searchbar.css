@@ -1,7 +1,9 @@
 .Searchbar {
   display: flex;
   flex-direction: row;
-  height: 15vh;
+  height: 150px;
+  overflow: hidden;
+  flex-wrap: nowrap;
   text-align: center;
   align-content: center;
   align-items: center;
@@ -31,12 +33,13 @@
 }
 
 .Searchbar-label {
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 600;
 }
 
 .Searchbar-input {
   width: 100%;
+  min-width: 30vh;
   outline: none;
   font-size: 30px;
   line-height: 1.5em;
@@ -60,7 +63,7 @@
   padding: 5px;
 }
 
-.circle {
+.poke-circle {
   background: white;
   height: 100px;
   display: flex;
@@ -70,15 +73,14 @@
   position: absolute;
   z-index: 2;
   top: 170px;
-  left: 300px;
+  left: 260px;
 }
 
-.circle2 {
+.poke-circle2 {
   background: white;
   height: 60%;
   width: 60%;
   border-radius: 50%;
   margin: auto;
-  align-items: center;
   border: 1px solid black;
 }

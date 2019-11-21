@@ -2,8 +2,5 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 50px 50px;
+  padding: 60px 20px;
 }

@@ -1,23 +1,17 @@
 .zoomedWrapper {
   display: flex;
-  margin: auto;
+  height: 100%;
   flex-direction: row;
   justify-content: center;
   color: white;
-  padding: 2%;
 }
 
 .zoomedWrapper .leftPanel,
 .zoomedWrapper .rightPanel {
-  display: block;
   padding: 1vh;
+  margin: auto 0;
 }
 
 .leftPanel img {
   max-height: 85vh;
-}
-
-.rightPanel {
-  align-items: center;
-  margin: auto 0;
 }
