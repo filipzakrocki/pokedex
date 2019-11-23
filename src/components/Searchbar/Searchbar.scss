@@ -1,7 +1,9 @@
+$fixed-height: 150px;
+
 .Searchbar {
   display: flex;
   flex-direction: row;
-  height: 150px;
+  height: $fixed-height;
   overflow: hidden;
   flex-wrap: nowrap;
   text-align: center;

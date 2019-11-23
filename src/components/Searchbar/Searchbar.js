@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 
-import "./Searchbar.css";
+import "./Searchbar.scss";
 import Logo from "../../assets/logo.png";
 import Pokeball from "../../assets/pokeball.png";
 
