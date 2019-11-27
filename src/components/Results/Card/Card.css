@@ -4,7 +4,7 @@
 }
 
 .Card:hover {
-  transform: scale(1.07);
+  transform: scale(1.05);
   transition: 0.1s;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);

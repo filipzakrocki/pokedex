@@ -31,12 +31,24 @@ export const fetchFinished = data => {
 export const fetchPokemon = pokemonQuery => {
   return async dispatch => {
     dispatch(fetchStarted());
-    const results = await axios.get(
-      `https://api.pokemontcg.io/v1/cards?name=${pokemonQuery}`
-    );
+
+    //query builder
+    let array = pokemonQuery.split(" ").map((string, index) => {
+      let modStr = string.replace(">", "=gt").replace("<", "=lt");
+      if (index > 0) {
+        return `&${modStr}`;
+      }
+      return `name=${string}`;
+    });
+
+    const params = `?${array.join("")}`;
+
+    const query = `https://api.pokemontcg.io/v1/cards` + params;
+    console.log(query);
+    const results = await axios.get(query);
     const cardsArray = await results.data.cards;
-    dispatch(fetchFinished());
     dispatch(setResults(cardsArray));
+    dispatch(fetchFinished());
   };
 };
 
@@ -53,18 +65,3 @@ export const openModal = clickedCardIndex => {
     selectedCard: clickedCardIndex
   };
 };
-
-// async example
-// export const purchaseBurger = (orderData, token) => {
-//     return dispatch => {
-//       dispatch(purchaseBurgerStart());
-//       axios
-//         .post("/orders.json?auth=" + token, orderData)
-//         .then(response => {
-//           dispatch(purchaseBurgerSuccess(response.data.name, orderData));
-//         })
-//         .catch(error => {
-//           dispatch(purchaseBurgerFail());
-//         });
-//     };
-//   };

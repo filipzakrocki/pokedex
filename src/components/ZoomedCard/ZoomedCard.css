@@ -15,3 +15,11 @@
 .leftPanel img {
   max-height: 85vh;
 }
+
+.rightPanel_title {
+  text-align: center;
+}
+
+.rightPanel_details {
+  text-align: left;
+}

@@ -45,16 +45,7 @@ const reducer = (state = initialState, action) => {
       return closeModal(state, action);
     case actionTypes.OPEN_MODAL:
       return openModal(state, action);
-    // case actionTypes.AUTH_START:
-    //   return authStart(state, action);
-    // case actionTypes.AUTH_SUCCESS:
-    //   return authSuccess(state, action);
-    // case actionTypes.AUTH_FAIL:
-    //   return authFail(state, action);
-    // case actionTypes.AUTH_LOGOUT:
-    //   return authLogOut(state, action);
-    // case actionTypes.SET_AUTH_REDIRECT:
-    //   return setAuthRedirectPath(state, action);
+
     default:
       return state;
   }
