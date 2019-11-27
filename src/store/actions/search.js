@@ -38,7 +38,10 @@ export const fetchPokemon = pokemonQuery => {
       if (index > 0) {
         return `&${modStr}`;
       }
-      return `name=${string}`;
+      if (!modStr.includes("=")) {
+        return `name=${string}`;
+      }
+      return modStr;
     });
 
     const params = `?${array.join("")}`;
