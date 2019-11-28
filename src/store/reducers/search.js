@@ -22,7 +22,7 @@ const fetchFinished = (state, action) => {
   return updateObject(state, { loading: false });
 };
 const closeModal = (state, action) => {
-  return updateObject(state, { modalOpen: false });
+  return updateObject(state, { modalOpen: false, zoomedCardIndex: null });
 };
 const openModal = (state, action) => {
   return updateObject(state, {

@@ -13,7 +13,11 @@ const Searchbar = props => {
         <img className={"Searchbar-logo"} src={Logo} alt="logo" />
       </div>
       <div className="poke-circle">
-        <div className="poke-circle2"></div>
+        <div className="poke-circle2">
+          <div className="poke-circle3">
+            {props.results ? props.results.length : ""}
+          </div>
+        </div>
       </div>
       <div className={"Searchbar-label__wrapper"}>
         <label className={"Searchbar-label"}>
@@ -21,6 +25,13 @@ const Searchbar = props => {
         </label>
       </div>
       <div className={"Searchbar-input__wrapper"}>
+        {/* <span className="Searchbar-tooltiptext">
+          <p>
+            You can use following attributes to filter your search: attackDamage
+            attackCost retreatCost hp
+          </p>
+          <p>Example: "Pikachu hp=60 attackDamage>70"</p>
+        </span> */}
         <input
           className={"Searchbar-input"}
           type="text"

@@ -33,25 +33,30 @@ export const fetchPokemon = pokemonQuery => {
     dispatch(fetchStarted());
 
     //query builder
-    let array = pokemonQuery.split(" ").map((string, index) => {
-      let modStr = string.replace(">", "=gt").replace("<", "=lt");
-      if (index > 0) {
-        return `&${modStr}`;
-      }
-      if (!modStr.includes("=")) {
-        return `name=${string}`;
-      }
-      return modStr;
-    });
-
-    const params = `?${array.join("")}`;
+    let params;
+    if (pokemonQuery) {
+      let array = pokemonQuery.split(" ").map((string, index) => {
+        let modStr = string.replace(">", "=gt").replace("<", "=lt");
+        if (index > 0) {
+          return `&${modStr}`;
+        }
+        if (!modStr.includes("=")) {
+          return `name=${string}`;
+        }
+        return modStr;
+      });
+      params = `?${array.join("")}`;
+    }
 
     const query = `https://api.pokemontcg.io/v1/cards` + params;
-    console.log(query);
-    const results = await axios.get(query);
-    const cardsArray = await results.data.cards;
-    dispatch(setResults(cardsArray));
-    dispatch(fetchFinished());
+    try {
+      const results = await axios.get(query);
+      const cardsArray = await results.data.cards;
+      dispatch(setResults(cardsArray));
+      dispatch(fetchFinished());
+    } catch (error) {
+      dispatch(fetchFinished());
+    }
   };
 };
 
