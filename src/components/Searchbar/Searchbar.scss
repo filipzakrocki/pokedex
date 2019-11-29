@@ -27,6 +27,8 @@ $fixed-height: 150px;
 .Searchbar-input__wrapper {
   flex: 5;
   display: flex;
+  max-height: 50px;
+  position: relative;
 }
 
 .Searchbar-logo {
@@ -44,24 +46,30 @@ $fixed-height: 150px;
   min-width: 30vh;
   outline: none;
   font-size: 30px;
-  line-height: 1.5em;
   text-align: center;
   border: none;
 }
 
 .Searchbar-tooltiptext {
   visibility: hidden;
-
+  font-size: 10px;
+  background: black;
+  padding: 10px;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
-  top: 13vh;
+  width: 60%;
+  top: 60px;
+  left: 20%;
 }
 
-.Searchbar-input__wrapper:hover .Searchbar-tooltiptext {
+.Searchbar-tooltip {
+}
+
+.Searchbar-tooltip:hover .Searchbar-tooltiptext {
   visibility: visible;
   opacity: 1;
 }
@@ -71,6 +79,10 @@ $fixed-height: 150px;
   border: none;
   outline: none;
   cursor: pointer;
+  color: black;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 0 10px;
 }
 
 .Searchbar-buttonImg:hover {
@@ -79,8 +91,10 @@ $fixed-height: 150px;
 
 .Searchbar-buttonImg {
   height: 40px;
-  padding: 5px;
+  padding: 5px 0;
 }
+
+//counter pokeball Circle
 
 .poke-circle {
   background: white;

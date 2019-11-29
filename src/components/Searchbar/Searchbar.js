@@ -25,13 +25,16 @@ const Searchbar = props => {
         </label>
       </div>
       <div className={"Searchbar-input__wrapper"}>
-        {/* <span className="Searchbar-tooltiptext">
-          <p>
-            You can use following attributes to filter your search: attackDamage
-            attackCost retreatCost hp
-          </p>
-          <p>Example: "Pikachu hp=60 attackDamage>70"</p>
-        </span> */}
+        <button className={"Searchbar-button Searchbar-tooltip"}>
+          ?
+          <span className={"Searchbar-tooltiptext"}>
+            <p>
+              Tip: You can add filters to your search with hp attackDamage
+              attackCost retreatCost.
+            </p>
+            <p>Example: 'Pikachu hp>70 attackDamage=80'</p>
+          </span>
+        </button>
         <input
           className={"Searchbar-input"}
           type="text"
