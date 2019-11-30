@@ -15,7 +15,9 @@ const Searchbar = props => {
       <div className="poke-circle">
         <div className="poke-circle2">
           <div className="poke-circle3">
-            {props.results ? props.results.length : ""}
+            {props.results && props.results.length > 0
+              ? props.results.length
+              : ""}
           </div>
         </div>
       </div>
@@ -29,8 +31,8 @@ const Searchbar = props => {
           ?
           <span className={"Searchbar-tooltiptext"}>
             <p>
-              Tip: You can add filters to your search with hp attackDamage
-              attackCost retreatCost.
+              Tip: You can add filters to your search with: hp, attackDamage,
+              attackCost, retreatCost.
             </p>
             <p>Example: 'Pikachu hp>70 attackDamage=80'</p>
           </span>

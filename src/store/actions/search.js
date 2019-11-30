@@ -28,6 +28,14 @@ export const fetchFinished = data => {
   };
 };
 
+export const setError = error => {
+  console.log(error);
+  return {
+    type: actionTypes.SET_ERROR,
+    error: error
+  };
+};
+
 export const fetchPokemon = pokemonQuery => {
   return async dispatch => {
     dispatch(fetchStarted());
@@ -55,6 +63,7 @@ export const fetchPokemon = pokemonQuery => {
       dispatch(setResults(cardsArray));
       dispatch(fetchFinished());
     } catch (error) {
+      dispatch(setError(error));
       dispatch(fetchFinished());
     }
   };

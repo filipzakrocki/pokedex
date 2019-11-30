@@ -6,7 +6,8 @@ const initialState = {
   results: null,
   loading: false,
   modalOpen: false,
-  zoomedCardIndex: null
+  zoomedCardIndex: null,
+  error: null
 };
 
 const setSearchQuery = (state, action) => {
@@ -14,6 +15,9 @@ const setSearchQuery = (state, action) => {
 };
 const setResults = (state, action) => {
   return updateObject(state, { results: action.results });
+};
+const setError = (state, action) => {
+  return updateObject(state, { error: action.error });
 };
 const fetchStarted = (state, action) => {
   return updateObject(state, { loading: true });
@@ -37,6 +41,8 @@ const reducer = (state = initialState, action) => {
       return setSearchQuery(state, action);
     case actionTypes.SET_RESULTS:
       return setResults(state, action);
+    case actionTypes.SET_ERROR:
+      return setError(state, action);
     case actionTypes.FETCH_STARTED:
       return fetchStarted(state, action);
     case actionTypes.FETCH_FINISHED:

@@ -1,5 +1,7 @@
 .Results {
   justify-content: center;
+  color: black;
+  font-size: 30px;
   display: flex;
   flex-wrap: wrap;
   padding: 60px 20px;

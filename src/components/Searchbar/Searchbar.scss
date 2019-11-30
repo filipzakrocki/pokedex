@@ -52,9 +52,9 @@ $fixed-height: 150px;
 
 .Searchbar-tooltiptext {
   visibility: hidden;
-  font-size: 10px;
+  font-size: 11px;
   background: black;
-  padding: 10px;
+  padding: 1px;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -64,9 +64,6 @@ $fixed-height: 150px;
   width: 60%;
   top: 60px;
   left: 20%;
-}
-
-.Searchbar-tooltip {
 }
 
 .Searchbar-tooltip:hover .Searchbar-tooltiptext {

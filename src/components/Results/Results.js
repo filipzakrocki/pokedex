@@ -6,23 +6,34 @@ import Card from "./Card/Card";
 import "./Results.css";
 
 const results = props => {
-  let list = <p>Waiting for your input!</p>;
+  let list = null;
 
   if (props.loading) {
     list = <Spinner />;
+  } else if (props.error) {
+    list = (
+      <>
+        <h3>ERROR: {props.error.message}!</h3>
+      </>
+    );
   } else if (props.results) {
-    list = props.results.map((card, index) => {
-      return (
-        <Card
-          key={card.id}
-          id={card.id}
-          index={index}
-          name={card.name}
-          imageUrl={card.imageUrl}
-          imageUrlHiRes={card.imageUrlHiRes}
-        />
+    list =
+      props.results.length === 0 ? (
+        <p>No results found :(</p>
+      ) : (
+        props.results.map((card, index) => {
+          return (
+            <Card
+              key={card.id}
+              id={card.id}
+              index={index}
+              name={card.name}
+              imageUrl={card.imageUrl}
+              imageUrlHiRes={card.imageUrlHiRes}
+            />
+          );
+        })
       );
-    });
   }
 
   return <div className={"Results"}>{list}</div>;
@@ -31,7 +42,8 @@ const results = props => {
 const mapStateToProps = state => {
   return {
     results: state.search.results,
-    loading: state.search.loading
+    loading: state.search.loading,
+    error: state.search.error
   };
 };
 

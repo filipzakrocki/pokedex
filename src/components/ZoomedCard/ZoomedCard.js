@@ -5,17 +5,19 @@ import { connect } from "react-redux";
 import "./ZoomedCard.css";
 
 const ZoomedCard = props => {
-  //assigning props to card
+  //selecting a card fromt he results on the basis of props.selectedCard (by index)
   const card = props.results[props.selectedCard];
 
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const image = imageLoaded ? (
     <div className={"zoomedWrapper"}>
+      {/* split to separate component - leftpanel */}
       <div className="leftPanel" onClick={e => e.stopPropagation()}>
         <img title={card.name} alt={card.name} src={card.imageUrlHiRes}></img>
         <p>Artist: {card.artist}</p>
       </div>
+      {/* split to separate component - rightpanel */}
       <div className="rightPanel" onClick={e => e.stopPropagation()}>
         <h3 className="rightPanel_title">Card information for {card.name}</h3>
         <div className="rightPanel_details">
@@ -87,5 +89,3 @@ export default connect(mapStateToProps)(ZoomedCard);
 // text: ["When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."]
 // types: ["Lightning"]
 // weaknesses: [{…}]
-//
-// STOP PROPAGATION?
