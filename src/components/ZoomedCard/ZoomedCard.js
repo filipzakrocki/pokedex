@@ -3,6 +3,8 @@ import Spinner from "../UI/Spinner/Spinner";
 import { connect } from "react-redux";
 
 import "./ZoomedCard.css";
+import ImagePanel from "./ImagePanel/ImagePanel";
+import DataPanel from "./DataPanel/DataPanel";
 
 const ZoomedCard = props => {
   //selecting a card fromt he results on the basis of props.selectedCard (by index)
@@ -12,28 +14,8 @@ const ZoomedCard = props => {
 
   const image = imageLoaded ? (
     <div className={"zoomedWrapper"}>
-      {/* split to separate component - leftpanel */}
-      <div className="leftPanel" onClick={e => e.stopPropagation()}>
-        <img title={card.name} alt={card.name} src={card.imageUrlHiRes}></img>
-        <p>Artist: {card.artist}</p>
-      </div>
-      {/* split to separate component - rightpanel */}
-      <div className="rightPanel" onClick={e => e.stopPropagation()}>
-        <h3 className="rightPanel_title">Card information for {card.name}</h3>
-        <div className="rightPanel_details">
-          <p>Hit Points: {card.hp}</p>
-          <p>Pokemon type(s): {card.types ? card.types.join(" ") : null}</p>
-          <p>Subtype: {card.subtype}</p>
-          <p>
-            Reatreat Cost: {card.retreatCost ? card.retreatCost.join(" ") : "0"}
-          </p>
-          <h4>Card data</h4>
-          <p>Set: {card.set}</p>
-          <p>Series: {card.series}</p>
-          <p>Card's Rarity: {card.rarity}</p>
-          <p>Unique ID: {card.id}</p>
-        </div>
-      </div>
+      <ImagePanel card={card} />
+      <DataPanel card={card} />
     </div>
   ) : (
     <div>

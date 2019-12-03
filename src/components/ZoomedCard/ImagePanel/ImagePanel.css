@@ -1,0 +1,8 @@
+.leftPanel {
+  padding: 1vh;
+  margin: auto 0;
+}
+
+.leftPanel img {
+  max-height: 85vh;
+}

@@ -1,11 +1,3 @@
-.zoomedWrapper {
-  display: flex;
-  height: 100%;
-  flex-direction: row;
-  justify-content: center;
-  color: white;
-}
-
 .rightPanel {
   padding: 1vh;
   margin: auto 0;
