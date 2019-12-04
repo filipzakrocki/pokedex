@@ -41,11 +41,16 @@ export const setLoadedImages = () => {
     type: actionTypes.SET_LOADED_IMAGES
   };
 };
+export const clearLoadedImages = () => {
+  return {
+    type: actionTypes.CLEAR_LOADED_IMAGES
+  };
+};
 
 export const fetchPokemon = pokemonQuery => {
   return async dispatch => {
     dispatch(fetchStarted());
-
+    dispatch(clearLoadedImages());
     //query builder
     let params;
     if (pokemonQuery) {
