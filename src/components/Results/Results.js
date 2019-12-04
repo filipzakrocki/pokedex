@@ -1,21 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import Spinner from "../UI/Spinner/Spinner";
 import Card from "./Card/Card";
 
 import "./Results.css";
 
-const results = props => {
+const Results = props => {
   let list = null;
+  let style = { display: "block" };
 
   if (props.loading) {
     list = <Spinner />;
   } else if (props.error) {
-    list = (
-      <>
-        <h3>ERROR: {props.error.message}!</h3>
-      </>
-    );
+    list = <h3>ERROR: {props.error.message}!</h3>;
   } else if (props.results) {
     list =
       props.results.length === 0 ? (
@@ -30,13 +27,20 @@ const results = props => {
               name={card.name}
               imageUrl={card.imageUrl}
               imageUrlHiRes={card.imageUrlHiRes}
+              onLoad={console.log(
+                "PLEASE ADD THE FUNCTIONALITY TO DISPLAY ALL IMAGES ONLY WHEN ALL OF THEM ARE LOADED :'("
+              )}
             />
           );
         })
       );
   }
 
-  return <div className={"Results"}>{list}</div>;
+  return (
+    <div style={style} className={"Results"}>
+      {list}
+    </div>
+  );
 };
 
 const mapStateToProps = state => {
@@ -47,4 +51,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(results);
+export default connect(mapStateToProps, null)(Results);
