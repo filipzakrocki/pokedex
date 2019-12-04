@@ -7,13 +7,19 @@ import "./Results.css";
 
 const Results = props => {
   let list = null;
-  let style = { display: "block" };
+  let spinner = null;
+  let style = { display: "none" };
 
   if (props.loading) {
-    list = <Spinner />;
+    spinner = <Spinner />;
+    list = null;
   } else if (props.error) {
     list = <h3>ERROR: {props.error.message}!</h3>;
+    spinner = null;
   } else if (props.results) {
+    style = {
+      display: props.results.length === props.loadedImages ? "block" : "none"
+    };
     list =
       props.results.length === 0 ? (
         <p>No results found :(</p>
@@ -26,10 +32,6 @@ const Results = props => {
               index={index}
               name={card.name}
               imageUrl={card.imageUrl}
-              imageUrlHiRes={card.imageUrlHiRes}
-              onLoad={console.log(
-                "PLEASE ADD THE FUNCTIONALITY TO DISPLAY ALL IMAGES ONLY WHEN ALL OF THEM ARE LOADED :'("
-              )}
             />
           );
         })
@@ -37,8 +39,9 @@ const Results = props => {
   }
 
   return (
-    <div style={style} className={"Results"}>
-      {list}
+    <div className={"Results"}>
+      {spinner}
+      <div style={style}>{list}</div>
     </div>
   );
 };
@@ -47,7 +50,8 @@ const mapStateToProps = state => {
   return {
     results: state.search.results,
     loading: state.search.loading,
-    error: state.search.error
+    error: state.search.error,
+    loadedImages: state.search.loadedImages
   };
 };
 

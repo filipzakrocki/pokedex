@@ -21,12 +21,15 @@ const Card = props => {
   return (
     <>
       {image}
-      {/* hidden div to render the wrapper only after it hi res image is loaded */}
+      {/* hidden div to render the wrapper only after its image is loaded */}
       <div style={{ display: "none" }}>
         <img
           src={props.imageUrl}
           alt={"placeholder"}
-          onLoad={() => setImageLoaded(true)}
+          onLoad={() => {
+            setImageLoaded(true);
+            props.setLoadedImages();
+          }}
         />
       </div>
     </>
@@ -35,7 +38,8 @@ const Card = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    openModal: index => dispatch(actions.openModal(index))
+    openModal: index => dispatch(actions.openModal(index)),
+    setLoadedImages: () => dispatch(actions.setLoadedImages())
   };
 };
 

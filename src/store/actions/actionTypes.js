@@ -8,3 +8,5 @@ export const CLOSE_MODAL = "CLOSE_MODAL";
 export const OPEN_MODAL = "OPEN_MODAL";
 
 export const SET_ERROR = "SET_ERROR";
+
+export const SET_LOADED_IMAGES = "SET_LOADED_IMAGES";

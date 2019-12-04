@@ -36,6 +36,12 @@ export const setError = error => {
   };
 };
 
+export const setLoadedImages = () => {
+  return {
+    type: actionTypes.SET_LOADED_IMAGES
+  };
+};
+
 export const fetchPokemon = pokemonQuery => {
   return async dispatch => {
     dispatch(fetchStarted());

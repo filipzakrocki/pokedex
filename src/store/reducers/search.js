@@ -7,6 +7,7 @@ const initialState = {
   loading: false,
   modalOpen: false,
   zoomedCardIndex: null,
+  loadedImages: 0,
   error: null
 };
 
@@ -18,6 +19,9 @@ const setResults = (state, action) => {
 };
 const setError = (state, action) => {
   return updateObject(state, { error: action.error });
+};
+const setLoadedImages = (state, action) => {
+  return updateObject(state, { loadedImages: state.loadedImages + 1 });
 };
 const fetchStarted = (state, action) => {
   return updateObject(state, { loading: true });
@@ -43,6 +47,8 @@ const reducer = (state = initialState, action) => {
       return setResults(state, action);
     case actionTypes.SET_ERROR:
       return setError(state, action);
+    case actionTypes.SET_LOADED_IMAGES:
+      return setLoadedImages(state, action);
     case actionTypes.FETCH_STARTED:
       return fetchStarted(state, action);
     case actionTypes.FETCH_FINISHED:
