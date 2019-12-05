@@ -49,11 +49,15 @@ export const clearLoadedImages = () => {
 
 export const fetchPokemon = pokemonQuery => {
   return async dispatch => {
+    let params;
+    //default path
+    let query = "https://api.pokemontcg.io/v1/cards";
     document.title = `Pokedex: ${pokemonQuery}`;
+
     dispatch(fetchStarted());
     dispatch(clearLoadedImages());
-    //query builder
-    let params;
+
+    //query builder if input is present
     if (pokemonQuery) {
       let array = pokemonQuery.split(" ").map((string, index) => {
         let modStr = string.replace(">", "=gt").replace("<", "=lt");
@@ -66,9 +70,9 @@ export const fetchPokemon = pokemonQuery => {
         return modStr;
       });
       params = `?${array.join("")}`;
+      query = `https://api.pokemontcg.io/v1/cards` + params;
     }
 
-    const query = `https://api.pokemontcg.io/v1/cards` + params;
     try {
       const results = await axios.get(query);
       const cardsArray = await results.data.cards;
