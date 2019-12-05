@@ -49,6 +49,7 @@ export const clearLoadedImages = () => {
 
 export const fetchPokemon = pokemonQuery => {
   return async dispatch => {
+    document.title = `Pokedex: ${pokemonQuery}`;
     dispatch(fetchStarted());
     dispatch(clearLoadedImages());
     //query builder
@@ -87,7 +88,6 @@ export const closeModal = () => {
 };
 
 export const openModal = clickedCardIndex => {
-  console.log(clickedCardIndex);
   return {
     type: actionTypes.OPEN_MODAL,
     selectedCard: clickedCardIndex

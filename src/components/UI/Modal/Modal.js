@@ -9,7 +9,13 @@ import ZoomedCard from "../../ZoomedCard/ZoomedCard";
 const Modal = props => {
   let modal = props.modalOpen ? (
     <>
-      <div className="Modal" onClick={() => props.closeModal()}>
+      <div
+        className="Modal"
+        onClick={() => {
+          props.closeModal();
+          document.title = `Pokedex: ${props.query}`;
+        }}
+      >
         <ZoomedCard />
       </div>
     </>
@@ -20,7 +26,8 @@ const Modal = props => {
 
 const mapStateToProps = state => {
   return {
-    modalOpen: state.search.modalOpen
+    modalOpen: state.search.modalOpen,
+    query: state.search.query
   };
 };
 

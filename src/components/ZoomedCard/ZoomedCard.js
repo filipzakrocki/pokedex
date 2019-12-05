@@ -11,6 +11,7 @@ const ZoomedCard = props => {
   const card = props.results[props.selectedCard];
 
   const [imageLoaded, setImageLoaded] = useState(false);
+  document.title = card.name;
 
   const image = imageLoaded ? (
     <div className={"zoomedWrapper"}>
