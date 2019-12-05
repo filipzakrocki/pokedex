@@ -8,6 +8,7 @@ import "./Results.css";
 const Results = props => {
   let list = null;
   let spinner = null;
+  let error = null;
   let style = { display: "none" };
 
   //fetching data loading
@@ -17,7 +18,7 @@ const Results = props => {
     //error handling
   } else if (props.error) {
     spinner = null;
-    list = <h3>ERROR: {props.error.message}!</h3>;
+    error = <h3>ERROR: {props.error.message}!</h3>;
     //results fetched
   } else if (props.results && props.results.length !== 0) {
     // spinner is active until all the images are rendered
@@ -38,14 +39,14 @@ const Results = props => {
         />
       );
     });
-  } else {
-    console.log(typeof props.results);
-    list = <h3>No results found...</h3>;
+  } else if (props.results && props.results.length === 0) {
+    error = <h3>No results found....</h3>;
   }
 
   return (
     <div className={"Results"}>
       {spinner}
+      {error}
       <div style={style}>{list}</div>
     </div>
   );
