@@ -1,5 +1,9 @@
 import React from "react";
+
+//redux
 import { connect } from "react-redux";
+
+//components
 import Spinner from "../UI/Spinner/Spinner";
 import Card from "./Card/Card";
 

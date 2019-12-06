@@ -1,0 +1,8 @@
+.Searchbar-buttonImg:hover {
+  transform: scale(1.1);
+}
+
+.Searchbar-buttonImg {
+  height: 40px;
+  padding: 5px 0;
+}

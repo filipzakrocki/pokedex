@@ -1,0 +1,8 @@
+.Searchbar-input {
+  width: 100%;
+  min-width: 30vh;
+  outline: none;
+  font-size: 30px;
+  text-align: center;
+  border: none;
+}
