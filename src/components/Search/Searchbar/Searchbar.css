@@ -1,0 +1,56 @@
+.Searchbar-input__wrapper {
+  flex: 5;
+  display: flex;
+  max-height: 50px;
+  position: relative;
+}
+
+.Searchbar-input {
+  width: 100%;
+  min-width: 30vh;
+  outline: none;
+  font-size: 30px;
+  text-align: center;
+  border: none;
+}
+
+.Searchbar-tooltiptext {
+  visibility: hidden;
+  font-size: 11px;
+  background: black;
+  padding: 1px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  width: 60%;
+  top: 60px;
+  left: 20%;
+}
+
+.Searchbar-tooltip:hover .Searchbar-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Searchbar-button {
+  background: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: black;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 0 10px;
+}
+
+.Searchbar-buttonImg:hover {
+  transform: scale(1.1);
+}
+
+.Searchbar-buttonImg {
+  height: 40px;
+  padding: 5px 0;
+}

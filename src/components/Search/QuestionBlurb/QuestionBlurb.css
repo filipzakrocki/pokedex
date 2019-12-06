@@ -1,0 +1,8 @@
+.Searchbar-label__wrapper {
+  flex: 4;
+}
+
+.Searchbar-label {
+  font-size: 25px;
+  font-weight: 600;
+}

@@ -1,0 +1,19 @@
+$fixed-height: 150px;
+
+.Search-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: $fixed-height;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background: #cc0000;
+  color: white;
+  padding: 40px;
+  border-bottom: black 15px solid;
+}
+
+//counter pokeball Circle
