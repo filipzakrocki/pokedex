@@ -52,7 +52,7 @@ export const fetchPokemon = pokemonQuery => {
     let params;
     //default path
     let query = "https://api.pokemontcg.io/v1/cards";
-    document.title = `Pokedex: ${pokemonQuery}`;
+    document.title = `Pokedex${": " + pokemonQuery}`;
 
     dispatch(fetchStarted());
     dispatch(clearLoadedImages());
