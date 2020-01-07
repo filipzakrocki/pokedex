@@ -7,7 +7,7 @@ import ImagePanel from "./ImagePanel/ImagePanel";
 import DataPanel from "./DataPanel/DataPanel";
 
 const ZoomedCard = props => {
-  //selecting a card fromt he results on the basis of props.selectedCard (by index)
+  //selecting a card from the results on the basis of props.selectedCard (by index)
   const card = props.results[props.selectedCard];
 
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -19,9 +19,7 @@ const ZoomedCard = props => {
       <DataPanel card={card} />
     </div>
   ) : (
-    <div>
-      <Spinner />
-    </div>
+    <Spinner />
   );
 
   const cardReady = (
