@@ -7,6 +7,7 @@ import * as actions from "../../../store/actions/index";
 import ZoomedCard from "../../ZoomedCard/ZoomedCard";
 
 const Modal = props => {
+  
   let modal = props.modalOpen ? (
     <>
       <div
