@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.eb315eab.chunk.css",
+    "main.js": "./static/js/main.cf3f0ca3.chunk.js",
+    "main.js.map": "./static/js/main.cf3f0ca3.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.e6fcf77b.js",
+    "runtime-main.js.map": "./static/js/runtime-main.e6fcf77b.js.map",
+    "static/js/2.282243ac.chunk.js": "./static/js/2.282243ac.chunk.js",
+    "static/js/2.282243ac.chunk.js.map": "./static/js/2.282243ac.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.b726fd33e313f379b859a85144254a4c.js": "./precache-manifest.b726fd33e313f379b859a85144254a4c.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.eb315eab.chunk.css.map": "./static/css/main.eb315eab.chunk.css.map",
+    "static/media/logo.png": "./static/media/logo.7bbe3170.png",
+    "static/media/pokeball.png": "./static/media/pokeball.f7b41b0b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e6fcf77b.js",
+    "static/js/2.282243ac.chunk.js",
+    "static/css/main.eb315eab.chunk.css",
+    "static/js/main.cf3f0ca3.chunk.js"
+  ]
+}
