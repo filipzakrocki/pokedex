@@ -1,6 +1,7 @@
 {
   "name": "pokedex",
   "version": "0.1.0",
+  "homepage": "http://filipzakrocki.github.io/pokedex",
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
@@ -17,7 +18,9 @@
     "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "eject": "react-scripts eject",
-    "scss": "node-sass --watch scss -o css"
+    "scss": "node-sass --watch scss -o css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
