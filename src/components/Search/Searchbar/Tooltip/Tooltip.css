@@ -25,6 +25,14 @@
   left: 20%;
 }
 
+@media only screen and (max-width: 600px) {
+  .Searchbar-tooltiptext {
+    top: 10px;
+    width: 100%;
+    left: 0;
+  }
+}
+
 .Searchbar-tooltip:hover .Searchbar-tooltiptext {
   visibility: visible;
   opacity: 1;
