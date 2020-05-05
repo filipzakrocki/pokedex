@@ -7,14 +7,18 @@ import CounterCircle from "./CounterCircle/CounterCircle";
 import QuestionBlurb from "./QuestionBlurb/QuestionBlurb";
 import Searchbar from "./Searchbar/Searchbar";
 
-const Search = props => {
+const Search = (props) => {
   return (
-    <div className="Search-wrapper">
-      <Logo />
-      <CounterCircle />
-      <QuestionBlurb />
-      <Searchbar />
-    </div>
+    <>
+      <div className="Search-wrapper">
+        <Logo />
+        <QuestionBlurb />
+        <Searchbar />
+      </div>
+      <div style={{ position: "absolute" }}>
+        <CounterCircle />
+      </div>
+    </>
   );
 };
 
